@@ -1,0 +1,12 @@
+#nodejs mudules
+node_modules
+
+# The virtualenv
+.env
+.venv
+
+#sass
+static/.sass-chache
+
+#static
+static/css

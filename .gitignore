@@ -10,3 +10,5 @@ static/.sass-chache
 
 #static
 static/css
+
+.DS_Store

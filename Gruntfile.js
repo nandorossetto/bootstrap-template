@@ -43,12 +43,12 @@ module.exports = function(grunt) {
 
         concat: {
             options: {
-                separator: ';',
+                separator: ';'
             },
 
             dist: {
                 src: ['static/js/**/*.js'],
-                dest: 'static/js/application.js',
+                dest: 'static/js/application.js'
             }
         },
 

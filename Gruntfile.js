@@ -36,9 +36,13 @@ module.exports = function(grunt) {
 
             target: {
                 files: {
-                    'static/js/build-min.js': ['static/js/application.js']
+                    'static/js/build-min.js': ['static/js/build.js']
                 }
             }
+        },
+
+        clean: {
+            js: ['static/js/build.js']
         },
 
         concat: {
@@ -48,7 +52,7 @@ module.exports = function(grunt) {
 
             dist: {
                 src: ['static/js/**/*.js'],
-                dest: 'static/js/application.js'
+                dest: 'static/js/build.js'
             }
         },
 
@@ -69,5 +73,5 @@ module.exports = function(grunt) {
     require('load-grunt-tasks')(grunt);
 
     //Building file to deploy
-    grunt.registerTask('deploy', ['compass', 'concat', 'uglify']);
+    grunt.registerTask('deploy', ['compass', 'concat', 'uglify', 'clean']);
 };

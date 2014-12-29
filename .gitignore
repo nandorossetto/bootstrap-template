@@ -11,5 +11,6 @@ static/.sass-chache
 
 #static
 static/css
+static/js/build-min.js
 
 .DS_Store

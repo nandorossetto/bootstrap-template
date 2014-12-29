@@ -56,6 +56,10 @@ module.exports = function(grunt) {
             }
         },
 
+        usemin: {
+            html: 'index.html'
+        },
+
         connect: {
             server: {
                 options: {
@@ -81,5 +85,5 @@ module.exports = function(grunt) {
     require('load-grunt-tasks')(grunt);
 
     //Building file to deploy
-    grunt.registerTask('deploy', ['compass', 'concat', 'uglify', 'clean']);
+    grunt.registerTask('deploy', ['compass', 'concat', 'uglify', 'clean', 'usemin']);
 };

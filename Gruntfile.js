@@ -60,10 +60,12 @@ module.exports = function(grunt) {
             html: 'index.html'
         },
 
+        //run server using grunt connect::keepalive
         connect: {
             server: {
                 options: {
-                    port: 9001
+                    port: 9001,
+                    hostname: '0.0.0.0'
                 }
             }
         },

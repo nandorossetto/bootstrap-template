@@ -1,18 +1,12 @@
 /*
 
 @author nando rossetto
-@homepage http://nandorossetto.me
+@homepage http://nandorossetto.github.io/
 @e-mail nandorossetto@gmail.com
 
 */
 
-var Application = {
-	Create:function(){
-		this.Example();
-	},
+(function () {
+    'use strict';
 
-    Example:function(){
-
-    }
-
-}; $(function(){ Application.Create(); });
+})();

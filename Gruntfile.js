@@ -60,32 +60,51 @@ module.exports = function(grunt) {
             html: 'index.html'
         },
 
-        //run server using grunt connect::keepalive
         connect: {
             server: {
                 options: {
-                    port: 9001,
-                    hostname: '0.0.0.0'
+                    port: 8000,
+                    hostname: '127.0.0.1'
                 }
             }
         },
 
+        babel: {
+            options: {
+                sourceMap: false,
+                presets: ['es2015']
+            },
+
+            dist: {
+                files: [{
+                    expand: true,
+                    cwd: 'static/js/es6/',
+                    src: ['**/*.js'],
+                    dest: 'static/js/dest/'
+                }]
+            }
+        },
+
         watch: {
-            jshint:{
+            jshint: {
                 files: '<%= jshint.files %>',
                 tasks: ['jshint']
             },
 
-            compass:{
+            compass: {
                 files: ['static/sass/**'],
                 tasks: ['compass:compiling']
+            },
+
+            babel: {
+                files: ['static/js/es6/**'],
+                tasks: ['babel']
             }
         }
-
     });
 
     require('load-grunt-tasks')(grunt);
 
-    //Building file to deploy
+    grunt.registerTask('dev', ['compass', 'connect', 'babel', 'watch']);
     grunt.registerTask('deploy', ['compass', 'concat', 'uglify', 'clean', 'usemin']);
 };

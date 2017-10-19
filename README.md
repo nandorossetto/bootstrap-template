@@ -22,6 +22,6 @@ npm install
 Available tasks
 --------------
 
-grunt watch: it'll watch your scss and js files to gives you a feedback about if have any error os if all fine
+grunt dev: it'll watch your scss and js files to gives you a feedback about if have any error os if all fine
 
 grunt deploy: will merge the static files to be ready to deploy

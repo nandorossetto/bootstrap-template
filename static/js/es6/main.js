@@ -1,7 +1,7 @@
 /*
 
 @author nando rossetto
-@homepage http://nandorossetto.github.io
+@homepage https://github.com/nandorossetto
 @e-mail nandorossetto@gmail.com
 
 */

@@ -29,6 +29,13 @@ module.exports = function(grunt) {
             }
         },
 
+        sass: {
+            dist: {
+                src: 'static/sass/application.scss',
+                dest: 'static/css/application.css'
+            }
+        },
+
         uglify: {
             options: {
                 mangle: false
@@ -63,7 +70,7 @@ module.exports = function(grunt) {
         connect: {
             server: {
                 options: {
-                    port: 8000,
+                    port: 5000,
                     hostname: '127.0.0.1'
                 }
             }
@@ -91,9 +98,9 @@ module.exports = function(grunt) {
                 tasks: ['jshint']
             },
 
-            compass: {
+            sass: {
                 files: ['static/sass/**'],
-                tasks: ['compass:compiling']
+                tasks: ['sass']
             },
 
             babel: {
@@ -105,6 +112,6 @@ module.exports = function(grunt) {
 
     require('load-grunt-tasks')(grunt);
 
-    grunt.registerTask('dev', ['compass', 'connect', 'babel', 'watch']);
+    grunt.registerTask('dev', ['sass', 'connect', 'babel', 'watch']);
     grunt.registerTask('deploy', ['compass', 'concat', 'uglify', 'clean', 'usemin']);
 };
